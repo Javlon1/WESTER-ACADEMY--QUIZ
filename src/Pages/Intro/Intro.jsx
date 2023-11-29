@@ -21,19 +21,19 @@ export default function Intro() {
 
         const nameRegex = /^[a-zA-Z]+$/;
         if (!nameRegex.test(formData.name)) {
-            newErrors.name = 'Name should only contain alphabetical characters';
+            newErrors.name = 'ismingizni yozing';
             isValid = false;
         }
 
         const ageValue = parseInt(formData.age, 10);
         if (isNaN(ageValue) || ageValue < 8 || ageValue > 28) {
-            newErrors.age = 'Age should be a number between 8 and 28';
+            newErrors.age = 'yoshingizni togri kiriting yoki yoshingiz togri kelmedi';
             isValid = false;
         }
 
         const phoneNumberRegex = /^\d+$/;
         if (!phoneNumberRegex.test(formData.phoneNumber) || formData.phoneNumber.length !== 9) {
-            newErrors.phoneNumber = 'Invalid phone number (must be a number with length 9)';
+            newErrors.phoneNumber = 'telefoningini shu tarzda kiriting 905251243';
             isValid = false;
         }
 
