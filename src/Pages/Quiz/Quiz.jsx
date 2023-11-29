@@ -23,7 +23,7 @@ export default function Quiz({ answer, setAnswer }) {
 
     const heandlerIcrement = () => {
         if (number === quizData.length - 1) {
-            alert("this is a last quest")
+            alert("bu oxirgi test")
             setNumber(number)
             setShow(false)
         } else {
