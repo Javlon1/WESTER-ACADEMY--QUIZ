@@ -21,7 +21,7 @@ export default function Intro() {
 
         const nameRegex = /^[a-zA-Z]+$/;
         if (!nameRegex.test(formData.name)) {
-            newErrors.name = 'ismingizni yozing';
+            newErrors.name = 'ismingizni yozing a-z';
             isValid = false;
         }
 
