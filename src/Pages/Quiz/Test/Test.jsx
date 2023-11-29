@@ -3,7 +3,7 @@ import { useState } from 'react'
 import '../Quiz.scss'
 
 
-export default function Test({ question, heandlerAnswer }) {
+export default function Test({ question, heandlerAnswer, testCount }) {
 
     const { id, questions, answers } = question
 
@@ -14,7 +14,7 @@ export default function Test({ question, heandlerAnswer }) {
             <div className="container__quest__top">
                 <div className="container__quest__top__cuantity">
                     <p></p>
-                    <div># <b>{id}</b> / <span>15</span>
+                    <div># <b>{id}</b> / <span>{testCount}</span>
                     </div>
                 </div>
                 <span className="container__quest__top__time">
