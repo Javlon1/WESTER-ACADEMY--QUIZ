@@ -20,7 +20,7 @@ export default function Intro() {
         const newErrors = {};
 
         const nameRegex = /^[a-zA-Zа-яА-Я]+$/;
-        if (!nameRegex.test(formData.name)) {
+        if (!nameRegex.test(formData.name.trim())) {
             newErrors.name = 'ismingizni yozing';
             isValid = false;
         }
