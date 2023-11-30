@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { myQuizData } from '../../Data/Data'
 import './Quiz.scss'
 import Test from './Test/Test'
+import { useEffect } from 'react'
 
 
 export default function Quiz({ answer, setAnswer }) {
@@ -11,6 +12,23 @@ export default function Quiz({ answer, setAnswer }) {
     const [number, setNumber] = useState(0)
     const [show, setShow] = useState(true)
     const [anws, setAnws] = useState(0)
+
+    // 
+    const [seconds, setSeconds] = useState(600);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSeconds((prevSeconds) => prevSeconds - 1);
+        }, 1000);
+
+        if (seconds === 0) {
+            clearInterval(interval);
+        }
+
+        return () => clearInterval(interval);
+    }, [seconds]);
+    
+    // 
 
     const heandlerAnswer = (id) => {
         setAnws(id);
@@ -53,26 +71,31 @@ export default function Quiz({ answer, setAnswer }) {
                         Oldingisi
                     </button>
                     {
-                        anws === 0 ? (
-                            <button className="container__pagination__btn2 deseable" disabled>
-                                Keyingisi
-                            </button>
+                        seconds === 0 ? (
+                            <Link to="/result">
+                                <button className='container__pagination__btn2'>natija</button>
+                            </Link>
                         ) : (
-                            show ? (
-                                <button className={anws === 0 ? "container__pagination__btn2 deseable" : "container__pagination__btn2"}
-                                    onClick={() => {
-                                        heandlerIcrement()
-                                        postHandler()
-                                    }}>
+                            anws === 0 ? (
+                                <button className="container__pagination__btn2 deseable" disabled>
                                     Keyingisi
                                 </button>
-
                             ) : (
-                                <Link to="/result">
-                                    <button className='container__pagination__btn2'>natija</button>
-                                </Link>
-                            )
-                        )
+                                show ? (
+                                    <button className={anws === 0 ? "container__pagination__btn2 deseable" : "container__pagination__btn2"}
+                                        onClick={() => {
+                                            heandlerIcrement()
+                                            postHandler()
+                                        }}>
+                                        Keyingisi
+                                    </button>
+
+                                ) : (
+                                    <Link to="/result">
+                                        <button className='container__pagination__btn2'>natija</button>
+                                    </Link>
+                                )
+                            ))
                     }
                 </div>
             </div>

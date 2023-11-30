@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Intro.scss'
 import xImg from "../../Assets/Img/x.png"
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 export default function Intro() {
     const [modal, setModal] = useState(false)
