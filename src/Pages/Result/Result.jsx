@@ -9,24 +9,24 @@ import { Link } from 'react-router-dom'
 import { myResultData } from '../../Data/Data'
 // import { useState } from 'react'
 
-export default function Result() {
-    const { url } = React.useContext(Context)
+export default function Result({ }) {
+    const { result, url } = React.useContext(Context)
     const [quizData, setQuizData] = React.useState(myResultData)
 
     React.useEffect(() => {
-        const getCounteries = async () => {
-            await fetch(`${url}/result`)
-                .then(resp => {
-                    if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
-                    return resp.json()
-                })
-                .then(data => setQuizData(data))
-                .catch(error => console.error(error.message))
+        if (result) {
+            const getCounteries = async () => {
+                await fetch(`${url}/result`)
+                    .then(resp => {
+                        if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
+                        return resp.json()
+                    })
+                    .then(data => setQuizData(data))
+                    .catch(error => console.error(error.message))
+            }
+            getCounteries()
         }
-        getCounteries()
     }, [url])
-
-    console.log(quizData);
 
     return (
 

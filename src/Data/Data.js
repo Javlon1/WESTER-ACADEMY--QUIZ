@@ -61,8 +61,8 @@ export const myQuizData = [
 export const myResultData = [
     {
         id: 1,
-        stack: "Front-End",
-        text: "Kreativlik , intizom, yaxshi fikrlash qobilyati",
-        percent: 90,
+        stack: "null",
+        text: "null",
+        rating: 0,
     }
 ]

@@ -9,13 +9,13 @@ import { Context } from '../../Context/Context'
 
 
 export default function Quiz({ answer, setAnswer }) {
-    const { url } = React.useContext(Context)
+    const { url, setResult } = React.useContext(Context)
     const [quizData, setQuizData] = useState(myQuizData)
     const [number, setNumber] = useState(0)
     const [show, setShow] = useState(true)
     const [anws, setAnws] = useState(0)
     const [seconds, setSeconds] = useState(600);
-    
+
     React.useEffect(() => {
         const getCounteries = async () => {
             await fetch(`${url}/question`)
@@ -85,7 +85,7 @@ export default function Quiz({ answer, setAnswer }) {
                     {
                         seconds === 0 ? (
                             <Link to="/result">
-                                <button className='container__pagination__btn2'>Natija</button>
+                                <button onClick={()=>{setResult(true)}} className='container__pagination__btn2'>Natija</button>
                             </Link>
                         ) : (
                             anws === 0 ? (
@@ -104,7 +104,7 @@ export default function Quiz({ answer, setAnswer }) {
 
                                 ) : (
                                     <Link to="/result">
-                                        <button className='container__pagination__btn2'>Natija</button>
+                                        <button onClick={()=>{setResult(true)}} className='container__pagination__btn2'>Natija</button>
                                     </Link>
                                 )
                             ))
