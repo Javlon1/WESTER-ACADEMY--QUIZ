@@ -19,9 +19,9 @@ export default function Intro() {
         let isValid = true;
         const newErrors = {};
 
-        const nameRegex = /^[a-zA-Z]+$/;
+        const nameRegex = /^[a-zA-Zа-яА-Я]+$/;
         if (!nameRegex.test(formData.name)) {
-            newErrors.name = 'ismingizni yozing a-z';
+            newErrors.name = 'ismingizni yozing';
             isValid = false;
         }
 
