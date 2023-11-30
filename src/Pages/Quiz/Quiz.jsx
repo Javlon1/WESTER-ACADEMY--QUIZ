@@ -73,7 +73,7 @@ export default function Quiz({ answer, setAnswer }) {
                     {
                         seconds === 0 ? (
                             <Link to="/result">
-                                <button className='container__pagination__btn2'>natija</button>
+                                <button className='container__pagination__btn2'>Natija</button>
                             </Link>
                         ) : (
                             anws === 0 ? (
@@ -92,7 +92,7 @@ export default function Quiz({ answer, setAnswer }) {
 
                                 ) : (
                                     <Link to="/result">
-                                        <button className='container__pagination__btn2'>natija</button>
+                                        <button className='container__pagination__btn2'>Natija</button>
                                     </Link>
                                 )
                             ))
