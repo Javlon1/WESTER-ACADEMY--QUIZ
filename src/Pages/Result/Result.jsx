@@ -5,7 +5,7 @@ import kurs2 from "../../Assets/Img/kurs2.png"
 import kurs3 from "../../Assets/Img/kurs3.png"
 import kurs4 from "../../Assets/Img/kurs4.png"
 
-export default function Result() {
+export default function Result() { 
     return (
 
         <div className="result">

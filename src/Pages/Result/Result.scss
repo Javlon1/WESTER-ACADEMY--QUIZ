@@ -8,7 +8,7 @@
             margin: 0 auto;
             width: 80%;
             background-image: url("../../Assets/Img/result.png");
-            background-repeat: no-repeat;
+            background-repeat: no-repeat; 
             background-position: right;
             background-color: #F2F2F2;
             padding: 1.2rem;
@@ -16,9 +16,9 @@
             height: 160px;
 
             &__title {
-                font-family: Onest;
-                font-size: 20px;
-                font-weight: 500;
+                margin-top: 1rem;
+                font-size: 42px;
+                font-weight: 600;
                 line-height: 22px;
             }
 
@@ -278,6 +278,9 @@
         .container {
             &__top {
                 width: 100%;
+                &__title{
+                    font-size: 30px;
+                }
             }
 
             &__answer {
