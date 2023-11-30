@@ -5,7 +5,7 @@
 
     .container {
         &__top {
-            margin: 0 auto;
+            margin: 0 auto; 
             width: 80%;
             background-image: url("../../Assets/Img/result.png");
             background-repeat: no-repeat; 
@@ -51,14 +51,16 @@
                         background-image: url("../../Assets/Img/result-bc.png");
                         background-repeat: no-repeat;
                         background-position: right top;
-
+                        position: relative;
                         span {
                             h4 {
-                                font-size: 30px;
+                                font-size: 28px;
                                 font-weight: 700;
                             }
 
                             p {
+
+                                margin-bottom: 0;
                                 margin-top: 1.5rem;
                                 font-size: 16px;
                                 font-weight: 500;
@@ -66,7 +68,10 @@
                         }
 
                         b {
-                            font-size: 60px;
+                            top: 0;
+                            right: 1rem;
+                            position: absolute;
+                            font-size: 50px;
                             font-weight: 700;
                         }
 
@@ -223,6 +228,7 @@
 
                     &__list {
                         &__item {
+                            width: 280px;
                             height: auto;
 
                             span {
@@ -237,7 +243,7 @@
                             }
 
                             b {
-                                font-size: 45px;
+                                font-size: 35px;
                                 font-weight: 600;
                             }
 
@@ -292,6 +298,7 @@
 
                     &__list {
                         &__item {
+                            width: auto;
                             height: auto;
 
                             span {

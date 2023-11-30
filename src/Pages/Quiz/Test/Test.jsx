@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { useState } from 'react'
 import '../Quiz.scss'
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 
-export default function Test({ question, heandlerAnswer, testCount }) {
-    const { id, questions, answers } = question
+export default function Test({ questions, heandlerAnswer, testCount, number }) {
+    const { question, answer } = questions
+
 
     const [selected, setSelected] = useState(null)
     // 
@@ -35,17 +35,17 @@ export default function Test({ question, heandlerAnswer, testCount }) {
             <div className="container__quest__top">
                 <div className="container__quest__top__cuantity">
                     <p></p>
-                    <div># <b>{id}</b> / <span>{testCount}</span>
+                    <div># <b>{number+1}</b> / <span>{testCount}</span>
                     </div>
                 </div>
                 <span className="container__quest__top__time">
                     {formatTime(seconds)}
                 </span>
-                <h2 className="container__quest__top__title">{questions}</h2>
+                <h2 className="container__quest__top__title">{question}</h2>
             </div>
             <ul className="container__quest__list">
                 {
-                    answers?.map((j) => (
+                    answer?.map((j) => (
                         <li key={j.id}
                             className={selected === j.id ? "container__quest__list__item selected" : "container__quest__list__item"}
                             onClick={() => {

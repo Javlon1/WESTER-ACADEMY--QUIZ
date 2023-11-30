@@ -4,8 +4,30 @@ import kurs1 from "../../Assets/Img/kurs1.png"
 import kurs2 from "../../Assets/Img/kurs2.png"
 import kurs3 from "../../Assets/Img/kurs3.png"
 import kurs4 from "../../Assets/Img/kurs4.png"
+import { Context } from '../../Context/Context'
+import { Link } from 'react-router-dom'
+import { myResultData } from '../../Data/Data'
+// import { useState } from 'react'
 
-export default function Result() { 
+export default function Result() {
+    const { url } = React.useContext(Context)
+    const [quizData, setQuizData] = React.useState(myResultData)
+
+    React.useEffect(() => {
+        const getCounteries = async () => {
+            await fetch(`${url}/result`)
+                .then(resp => {
+                    if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
+                    return resp.json()
+                })
+                .then(data => setQuizData(data))
+                .catch(error => console.error(error.message))
+        }
+        getCounteries()
+    }, [url])
+
+    console.log(quizData);
+
     return (
 
         <div className="result">
@@ -21,56 +43,17 @@ export default function Result() {
                 <div className="container__answer">
                     <div className="container__answer__left">
                         <ul className="container__answer__left__list">
-                            <li className="container__answer__left__list__item">
-                                <span>
-                                    <h4>Front-End</h4>
-                                    <p>
-                                        Kreativlik , intizom, yaxshi
-                                        fikrlash qobilyati
-                                    </p>
-                                </span>
-                                <b>85%</b>
-                            </li>
-                            <li className="container__answer__left__list__item">
-                                <span>
-                                    <h4>Front-End</h4>
-                                    <p>
-                                        Kreativlik , intizom, yaxshi
-                                        fikrlash qobilyati
-                                    </p>
-                                </span>
-                                <b>85%</b>
-                            </li>
-                            <li className="container__answer__left__list__item">
-                                <span>
-                                    <h4>Front-End</h4>
-                                    <p>
-                                        Kreativlik , intizom, yaxshi
-                                        fikrlash qobilyati
-                                    </p>
-                                </span>
-                                <b>85%</b>
-                            </li>
-                            <li className="container__answer__left__list__item">
-                                <span>
-                                    <h4>Front-End</h4>
-                                    <p>
-                                        Kreativlik , intizom, yaxshi
-                                        fikrlash qobilyati
-                                    </p>
-                                </span>
-                                <b>85%</b>
-                            </li>
-                            <li className="container__answer__left__list__item">
-                                <span>
-                                    <h4>Front-End</h4>
-                                    <p>
-                                        Kreativlik , intizom, yaxshi
-                                        fikrlash qobilyati
-                                    </p>
-                                </span>
-                                <b>85%</b>
-                            </li>
+                            {
+                                quizData?.map((e, i) => (
+                                    <li key={i} className="container__answer__left__list__item">
+                                        <span>
+                                            <h4>{e.stack}</h4>
+                                            <p>{e.text}</p>
+                                        </span>
+                                        <b>{e.rating}%</b>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                     <div className="container__answer__right">
@@ -79,13 +62,13 @@ export default function Result() {
                                 <h3>Kurslar haqida slayd bilan tanishing</h3>
                                 <p>Slayd orqali siz IT sohasi va bizda mavjud bo’lgan TOP kasblar haqida bilib
                                     olishingiz mumkin bo’ladi.</p>
-                                <a href="#"><i className="bi bi-plus-lg"></i></a>
+                                <Link to="#"><i className="bi bi-plus-lg"></i></Link>
                             </li>
                             <li>
                                 <h3>O’zingizni qulay usulda o’qing</h3>
                                 <b>Standart</b>
                                 <b>BootCamp</b>
-                                <a href="#"><i className="bi bi-plus-lg"></i></a>
+                                <Link to="#"><i className="bi bi-plus-lg"></i></Link>
                             </li>
                             <li>
                                 <h3>Kurslar dasturi bozor talabiga javob beradi</h3>

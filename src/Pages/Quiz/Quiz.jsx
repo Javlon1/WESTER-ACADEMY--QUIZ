@@ -5,16 +5,29 @@ import { myQuizData } from '../../Data/Data'
 import './Quiz.scss'
 import Test from './Test/Test'
 import { useEffect } from 'react'
+import { Context } from '../../Context/Context'
 
 
 export default function Quiz({ answer, setAnswer }) {
+    const { url } = React.useContext(Context)
     const [quizData, setQuizData] = useState(myQuizData)
     const [number, setNumber] = useState(0)
     const [show, setShow] = useState(true)
     const [anws, setAnws] = useState(0)
-
-    // 
     const [seconds, setSeconds] = useState(600);
+    
+    React.useEffect(() => {
+        const getCounteries = async () => {
+            await fetch(`${url}/question`)
+                .then(resp => {
+                    if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
+                    return resp.json()
+                })
+                .then(data => setQuizData(data))
+                .catch(error => console.error(error.message))
+        }
+        getCounteries()
+    }, [url])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,8 +40,7 @@ export default function Quiz({ answer, setAnswer }) {
 
         return () => clearInterval(interval);
     }, [seconds]);
-    
-    // 
+
 
     const heandlerAnswer = (id) => {
         setAnws(id);
@@ -64,7 +76,7 @@ export default function Quiz({ answer, setAnswer }) {
         <div className="quiz">
             <div className="container">
 
-                <Test question={quizData[number]} heandlerAnswer={heandlerAnswer} testCount={quizData.length} />
+                <Test questions={quizData[number]} heandlerAnswer={heandlerAnswer} number={number} testCount={quizData.length} />
 
                 <div className="container__pagination">
                     <button onClick={heandlerDecrement} className={number === 0 ? "container__pagination__btn1 deseable" : "container__pagination__btn1"}>

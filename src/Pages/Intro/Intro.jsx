@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import './Intro.scss'
 import xImg from "../../Assets/Img/x.png"
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../Context/Context';
 
 export default function Intro() {
+    const { url } = useContext(Context)
+
     const [modal, setModal] = useState(false)
     const navigate = useNavigate();
 
@@ -21,19 +25,19 @@ export default function Intro() {
 
         const nameRegex = /^[a-zA-Zа-яА-Я]+$/;
         if (!nameRegex.test(formData.name.trim())) {
-            newErrors.name = 'ismingizni yozing';
+            newErrors.name = 'Ismingizni yozing';
             isValid = false;
         }
 
         const ageValue = parseInt(formData.age, 10);
         if (isNaN(ageValue) || ageValue < 8 || ageValue > 28) {
-            newErrors.age = 'yoshingizni togri kiriting yoki yoshingiz togri kelmedi';
+            newErrors.age = 'Yoshingizni togri kiriting yoki yoshingiz togri kelmedi';
             isValid = false;
         }
 
         const phoneNumberRegex = /^\d+$/;
         if (!phoneNumberRegex.test(formData.phoneNumber) || formData.phoneNumber.length !== 9) {
-            newErrors.phoneNumber = 'telefoningini shu tarzda kiriting 905251243';
+            newErrors.phoneNumber = 'Raqamingizni shu tarzda kiriting 905251243';
             isValid = false;
         }
 
@@ -45,10 +49,26 @@ export default function Intro() {
         e.preventDefault();
 
         if (validateForm()) {
+            fetch(`${url}/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json', // qysi formatta yuborish
+                    'Accept': 'application/json', // qysi formatta uni qabul qilib olishi
+                    'Access-Control-Allow-Origin': '*' // ruxsat berish hammaga
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    age: formData.age,
+                    number: formData.phoneNumber
+                })
+            })
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+
+
             navigate("/quiz")
             console.log('Form submitted:', formData);
         } else {
-
             console.log('Form validation failed');
         }
     };

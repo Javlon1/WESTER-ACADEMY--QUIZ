@@ -36,8 +36,8 @@ export const HeaderData = [
 export const myQuizData = [
     {
         id: 1,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
+        question: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
+        answer: [
             {
                 id: 1,
                 answer: "Введение в программирование",
@@ -56,202 +56,13 @@ export const myQuizData = [
             },
         ]
     },
-    {
-        id: 2,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 5,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 6,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 7,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 8,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 3,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 4,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 5,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 6,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 7,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 8,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 9,
-        questions: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
-    {
-        id: 10,
-        questions: "1Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
-        answers: [
-            {
-                id: 9,
-                answer: "Введение в программирование",
-            },
-            {
-                id: 10,
-                answer: "Введение в контроль версий",
-            },
-            {
-                id: 11,
-                answer: "Знакомство с языками программирования",
-            },
-            {
-                id: 12,
-                answer: "Знакомство с базами данных",
-            },
-        ]
-    },
 ];
+
+export const myResultData = [
+    {
+        id: 1,
+        stack: "Front-End",
+        text: "Kreativlik , intizom, yaxshi fikrlash qobilyati",
+        percent: 90,
+    }
+]
