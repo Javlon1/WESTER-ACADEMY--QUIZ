@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './Result.scss'
 import kurs1 from "../../Assets/Img/kurs1.png"
 import kurs2 from "../../Assets/Img/kurs2.png"
 import kurs3 from "../../Assets/Img/kurs3.png"
@@ -7,7 +6,7 @@ import kurs4 from "../../Assets/Img/kurs4.png"
 import { Context } from '../../Context/Context'
 import { Link } from 'react-router-dom'
 import { myResultData } from '../../Data/Data'
-// import { useState } from 'react'
+import './Result.scss'
 
 export default function Result({ }) {
     const { result, url } = React.useContext(Context)
@@ -29,7 +28,6 @@ export default function Result({ }) {
     }, [url])
 
     return (
-
         <div className="result">
             <div className="container">
                 <div className="container__top">

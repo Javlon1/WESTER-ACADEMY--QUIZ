@@ -36,23 +36,23 @@ export const HeaderData = [
 export const myQuizData = [
     {
         id: 1,
-        question: "Sizga qiyin topshiriq yuklatilganda o’zingizni qanday tutasiz ? Panika qilib men eplolmayman deysizmi yoki harakat qilib ko’rasizmi ?",
+        question: "null",
         answer: [
             {
                 id: 1,
-                answer: "Введение в программирование",
+                answer: "null",
             },
             {
                 id: 2,
-                answer: "Введение в контроль версий",
+                answer: "null",
             },
             {
                 id: 3,
-                answer: "Знакомство с языками программирования",
+                answer: "null",
             },
             {
                 id: 4,
-                answer: "Знакомство с базами данных",
+                answer: "null",
             },
         ]
     },
