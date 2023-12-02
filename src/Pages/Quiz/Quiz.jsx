@@ -53,7 +53,7 @@ export default function Quiz({ answer, setAnswer }) {
 
     const heandlerIcrement = () => {
         if (number === quizData.length - 1) {
-            alert("bu oxirgi test")
+            alert("bu oxirgi savol")
             setNumber(number)
             setShow(false)
         } else {

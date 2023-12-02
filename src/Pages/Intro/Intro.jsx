@@ -31,7 +31,7 @@ export default function Intro() {
 
         const ageValue = parseInt(formData.age, 10);
         if (isNaN(ageValue) || ageValue < 8 || ageValue > 28) {
-            newErrors.age = 'Yoshingizni togri kiriting yoki yoshingiz togri kelmedi';
+            newErrors.age = 'Yoshingizni to‘g‘ri kiriting yoki yoshingiz to‘g‘ri kelmaydi';
             isValid = false;
         }
 
@@ -86,7 +86,7 @@ export default function Intro() {
             <div className="container">
                 <div className="container__list">
                     <div className="container__list__item">
-                        <h3 className='container__list__item__title'>IT sohasida o’zingiz uchun qaysi kasb mos kelishini bilib oling</h3>
+                        <h3 className='container__list__item__title'>IT sohasida o‘zingiz uchun qaysi kasb mos kelishini bilib oling</h3>
                         <button onClick={() => { setModal(true) }} className='container__list__item__btn'>Bilib olish</button>
                     </div>
                 </div>
@@ -101,8 +101,7 @@ export default function Intro() {
                             <img src={xImg} alt="" />
                         </p>
                     </div>
-                    <p className="pop-up__form__subtitle">Test natijalari bo’yicha yordam berishimiz uchun bizga
-                        ma’lumotlaringizni qoldiring.</p>
+                    <p className="pop-up__form__subtitle">Test natijalari bo‘yicha yordam berishimiz uchun bizga ma’lumotlaringizni qoldiring.</p>
                     <div>
                         <input
                             className='pop-up__form__inp'
@@ -142,7 +141,7 @@ export default function Intro() {
                         {errors.phoneNumber && <p>{errors.phoneNumber}</p>}
                     </div>
 
-                    <button className='pop-up__form__btn' type="submit">Submit</button>
+                    <button className='pop-up__form__btn' type="submit">Yuborish</button>
                 </form>
             </div>
         </div>

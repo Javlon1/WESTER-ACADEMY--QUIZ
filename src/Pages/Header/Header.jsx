@@ -11,7 +11,7 @@ export default function Header() {
                         <img src={logo} alt="logo" loading="lazy" />
                     </div>
                     <div className="container__nav__number">
-                        <a href="tel:905251243">905251243</a>
+                        <a href="tel:998932609010">+998 93-260-90-10</a>
                     </div>
                 </nav>
             </div>
