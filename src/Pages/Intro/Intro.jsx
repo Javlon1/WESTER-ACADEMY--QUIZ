@@ -37,7 +37,7 @@ export default function Intro() {
 
         const phoneNumberRegex = /^\d+$/;
         if (!phoneNumberRegex.test(formData.phoneNumber) || formData.phoneNumber.length !== 9) {
-            newErrors.phoneNumber = 'Raqamingizni shu tarzda kiriting 905251243';
+            newErrors.phoneNumber = 'Raqamingizni shu tarzda kiriting 912345678';
             isValid = false;
         }
 
