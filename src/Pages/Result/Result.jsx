@@ -11,6 +11,7 @@ import './Result.scss'
 export default function Result({ }) {
     const { result, url } = React.useContext(Context)
     const [quizData, setQuizData] = React.useState(myResultData)
+    const [loader, setLoader] = React.useState(true)
 
     React.useEffect(() => {
         if (result) {
@@ -22,6 +23,7 @@ export default function Result({ }) {
                     })
                     .then(data => setQuizData(data))
                     .catch(error => console.error(error.message))
+                setLoader(false)
             }
             getCounteries()
         }
@@ -41,7 +43,7 @@ export default function Result({ }) {
                         <ul className="container__answer__left__list">
                             {
                                 quizData?.map((e, i) => (
-                                    <li key={i} className="container__answer__left__list__item">
+                                    <li key={i} className={loader ? "skeleton" : "container__answer__left__list__item"}>
                                         <span>
                                             <h4>{e.stack}</h4>
                                             <p>{e.text}</p>

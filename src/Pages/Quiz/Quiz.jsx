@@ -6,6 +6,7 @@ import './Quiz.scss'
 import Test from './Test/Test'
 import { useEffect } from 'react'
 import { Context } from '../../Context/Context'
+import xImg from "../../Assets/Img/x.png"
 
 
 export default function Quiz({ answer, setAnswer }) {
@@ -13,8 +14,10 @@ export default function Quiz({ answer, setAnswer }) {
     const [quizData, setQuizData] = useState(myQuizData)
     const [number, setNumber] = useState(0)
     const [show, setShow] = useState(true)
+    const [loader, setLoader] = useState(true)
     const [anws, setAnws] = useState(0)
     const [seconds, setSeconds] = useState(600);
+    const [modal, setModal] = useState(false)
 
     React.useEffect(() => {
         const getCounteries = async () => {
@@ -25,6 +28,7 @@ export default function Quiz({ answer, setAnswer }) {
                 })
                 .then(data => setQuizData(data))
                 .catch(error => console.error(error.message))
+                setLoader(false)
         }
         getCounteries()
     }, [url])
@@ -53,8 +57,8 @@ export default function Quiz({ answer, setAnswer }) {
 
     const heandlerIcrement = () => {
         if (number === quizData.length - 1) {
-            alert("bu oxirgi savol")
             setNumber(number)
+            setModal(true)
             setShow(false)
         } else {
             setNumber(number + 1)
@@ -75,8 +79,19 @@ export default function Quiz({ answer, setAnswer }) {
 
         <div className="quiz">
             <div className="container">
+            <div className={modal ? "q-close activeModal" : "q-close"} onClick={() => { setModal(false) }}></div>
+            <div className={modal ? "q activeModal" : "q"}>
+                <div className="q__form">
+                    <div className="q__form__top">
+                        <h3>Bu oxirgi savol!</h3>
+                        <p onClick={() => { setModal(false) }}>
+                            <img src={xImg} alt="" />
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                <Test questions={quizData[number]} heandlerAnswer={heandlerAnswer} number={number} testCount={quizData.length} />
+                <Test questions={quizData[number]} heandlerAnswer={heandlerAnswer} number={number} testCount={quizData.length} loader={loader} />
 
                 <div className="container__pagination">
                     <button onClick={heandlerDecrement} className={number === 0 ? "container__pagination__btn1 deseable" : "container__pagination__btn1"}>

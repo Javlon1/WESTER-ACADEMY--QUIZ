@@ -4,7 +4,7 @@ import '../Quiz.scss'
 import { useEffect } from 'react';
 
 
-export default function Test({ questions, heandlerAnswer, testCount, number }) {
+export default function Test({ questions, heandlerAnswer, testCount, number, loader }) {
     const { question, answer } = questions
 
 
@@ -41,13 +41,13 @@ export default function Test({ questions, heandlerAnswer, testCount, number }) {
                 <span className="container__quest__top__time">
                     {formatTime(seconds)}
                 </span>
-                <h2 className="container__quest__top__title">{question}</h2>
+                <h2 className={loader ? "skeleton" : "container__quest__top__title"}>{question}</h2>
             </div>
             <ul className="container__quest__list">
                 {
                     answer?.map((j) => (
                         <li key={j.id}
-                            className={selected === j.id ? "container__quest__list__item selected" : "container__quest__list__item"}
+                            className={loader ? "skeleton" : `${selected === j.id ? "container__quest__list__item selected" : "container__quest__list__item"}`}
                             onClick={() => {
                                 setSelected(j.id)
                                 heandlerAnswer(j.id)

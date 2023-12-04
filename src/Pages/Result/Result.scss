@@ -348,3 +348,26 @@
         }
     }
 }
+
+.skeleton {
+    margin-top: 1rem;
+    width: 100%;
+    height: 72px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    animation: skeleton-loading 1s linear infinite alternate;
+    color: transparent;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
