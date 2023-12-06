@@ -9,7 +9,7 @@ import { Context } from '../../Context/Context'
 import xImg from "../../Assets/Img/x.png"
 
 
-export default function Quiz({ answer, setAnswer }) {
+export default function Quiz() {
     const { url, setResult } = React.useContext(Context)
     const [quizData, setQuizData] = useState(myQuizData)
     const [number, setNumber] = useState(0)
@@ -19,9 +19,10 @@ export default function Quiz({ answer, setAnswer }) {
     const [seconds, setSeconds] = useState(600);
     const [modal, setModal] = useState(false)
 
+
     React.useEffect(() => {
         const getCounteries = async () => {
-            await fetch(`${url}/question`)
+            await fetch(`${url}/f0aebd04a8e6d9970573a520f084a8c3dfa7b93aa89818abe631be0839cc1b67`)
                 .then(resp => {
                     if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
                     return resp.json()
@@ -32,6 +33,7 @@ export default function Quiz({ answer, setAnswer }) {
         }
         getCounteries()
     }, [url])
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -50,10 +52,23 @@ export default function Quiz({ answer, setAnswer }) {
         setAnws(id);
     }
 
+
     const postHandler = () => {
-        console.log(quizData[number].id);
-        console.log(anws);
+
+        fetch(`${url}/e8270ebb4d78d5528192fc8ef01228f3e2301bfd946d3703f95d7fad86f1172d`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json', 
+                'Accept': 'application/json',
+                'Access-Control-Allow-Origin': '*' 
+            },
+            body: JSON.stringify({
+                quiz_id: quizData[number].id,
+                answer_id: anws,
+            })
+        })
     }
+
 
     const heandlerIcrement = () => {
         if (number === quizData.length - 1) {
@@ -65,6 +80,8 @@ export default function Quiz({ answer, setAnswer }) {
             setAnws(0)
         }
     }
+
+
     const heandlerDecrement = () => {
         if (number === 0) {
             setNumber(number)
@@ -75,15 +92,15 @@ export default function Quiz({ answer, setAnswer }) {
         }
     }
 
-    return (
 
+    return (
         <div className="quiz">
             <div className="container">
             <div className={modal ? "q-close activeModal" : "q-close"} onClick={() => { setModal(false) }}></div>
             <div className={modal ? "q activeModal" : "q"}>
                 <div className="q__form">
                     <div className="q__form__top">
-                        <h3>Bu oxirgi savol!</h3>
+                        <h3>Bu songi savol ! Natijangizni bilish uchun natija tugmasini bosing</h3>
                         <p onClick={() => { setModal(false) }}>
                             <img src={xImg} alt="" />
                         </p>

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 
 export default function Test({ questions, heandlerAnswer, testCount, number, loader }) {
-    const { question, answer } = questions
+    const { question, answers } = questions
 
 
     const [selected, setSelected] = useState(null)
@@ -45,7 +45,7 @@ export default function Test({ questions, heandlerAnswer, testCount, number, loa
             </div>
             <ul className="container__quest__list">
                 {
-                    answer?.map((j) => (
+                    answers?.map((j) => (
                         <li key={j.id}
                             className={loader ? "skeleton" : `${selected === j.id ? "container__quest__list__item selected" : "container__quest__list__item"}`}
                             onClick={() => {

@@ -16,7 +16,7 @@ export default function Result({ }) {
     React.useEffect(() => {
         if (result) {
             const getCounteries = async () => {
-                await fetch(`${url}/result`)
+                await fetch(`${url}/e12bf89d64422d555b4ad855591036093e3afaac1d867cc351464fad8b6b49a1`)
                     .then(resp => {
                         if (!resp.ok) throw new Error(`oшибка: ${resp.status}`)
                         return resp.json()
@@ -45,10 +45,24 @@ export default function Result({ }) {
                                 quizData?.map((e, i) => (
                                     <li key={i} className={loader ? "skeleton" : "container__answer__left__list__item"}>
                                         <span>
-                                            <h4>{e.stack}</h4>
-                                            <p>{e.text}</p>
+                                            <h4>{e.title}</h4>
+                                            <p>
+                                                {
+                                                    e.title === "Design" ?
+                                                        "Dizayning san'ati, rang va shakllar." :
+                                                        e.title === "Back-end" ?
+                                                            "Algoritmlar,muammolarga yechim topish,intizom." :
+                                                            e.title === "Front-end" ?
+                                                                "Kreativlik,ilg'or go'yalar,noodatiy yondashuv." :
+                                                                e.title === "3D Modeling" ?
+                                                                    "3D model qilish,animatsiya va texnika." :
+                                                                    e.title === "Marketing" ?
+                                                                        "Maxsus marketing strategiyalari." :
+                                                                        ""
+                                                }
+                                            </p>
                                         </span>
-                                        <b>{e.rating}%</b>
+                                        <b>{e.percent}%</b>
                                     </li>
                                 ))
                             }

@@ -7,7 +7,6 @@ import { Context } from '../../Context/Context';
 
 export default function Intro() {
     const { url } = useContext(Context)
-
     const [modal, setModal] = useState(false)
     const navigate = useNavigate();
 
@@ -35,9 +34,9 @@ export default function Intro() {
             isValid = false;
         }
 
-        const phoneNumberRegex = /^\d+$/;
-        if (!phoneNumberRegex.test(formData.phoneNumber) || formData.phoneNumber.length !== 9) {
-            newErrors.phoneNumber = 'Raqamingizni shu tarzda kiriting 912345678';
+        const phoneNumberRegex = /^\998[0-9]\d{8}$/;
+        if (!phoneNumberRegex.test(formData.phoneNumber) || formData.phoneNumber.length !== 12) {
+            newErrors.phoneNumber = 'Raqamingizni shu tarzda kiriting 998XXXXXXXXX';
             isValid = false;
         }
 
@@ -49,12 +48,12 @@ export default function Intro() {
         e.preventDefault();
 
         if (validateForm()) {
-            fetch(`${url}/register`, {
+            fetch(`${url}/8f35863e12d598583ee09c31bb260d0ac7db3d870f7002644938d14c04142b4f`, {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'application/json', // qysi formatta yuborish
-                    'Accept': 'application/json', // qysi formatta uni qabul qilib olishi
-                    'Access-Control-Allow-Origin': '*' // ruxsat berish hammaga
+                    'Content-type': 'application/json', 
+                    'Accept': 'application/json', 
+                    'Access-Control-Allow-Origin': '*' 
                 },
                 body: JSON.stringify({
                     name: formData.name,
