@@ -73,7 +73,9 @@ export default function Result({ }) {
                             <li>
                                 <h3>Kurslar haqida slayd bilan tanishing</h3>
                                 <p>Slayd orqali siz IT sohasi va bizda mavjud bo‘lgan TOP kasblar haqida bilib olishingiz mumkin bo‘ladi.</p>
-                                <Link to="#"><i className="bi bi-plus-lg"></i></Link>
+                                <Link to="https://westeracademy.uz/static/assets/img/2050f083-4639-4807-8144-5c7983359bbb.pdf" target="_blank" rel="">
+                                    <i className="bi bi-plus-lg"></i>
+                                </Link>
                             </li>
                             <li>
                                 <h3>O‘zingizni qulay usulda o‘qing</h3>

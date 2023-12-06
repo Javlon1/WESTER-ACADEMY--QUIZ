@@ -7,9 +7,9 @@ export default function Header() {
         <header className="header">
             <div className="container">
                 <nav className="container__nav">
-                    <div>
+                    <a href="https://westeracademy.uz/" target="_blank">
                         <img src={logo} alt="logo" loading="lazy" />
-                    </div>
+                    </a>
                     <div className="container__nav__number">
                         <a href="tel:998932609010">+998 93-260-90-10</a>
                     </div>
