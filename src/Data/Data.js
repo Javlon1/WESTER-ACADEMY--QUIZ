@@ -66,5 +66,3 @@ export const myResultData = [
         rating: 0,
     }
 ]
-256
-1333
