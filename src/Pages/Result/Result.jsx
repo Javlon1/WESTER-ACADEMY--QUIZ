@@ -81,7 +81,7 @@ export default function Result({ }) {
                                 <h3>O‘zingizni qulay usulda o‘qing</h3>
                                 <b>Standart</b>
                                 <b>BootCamp</b>
-                                <Link to="#"><i className="bi bi-plus-lg"></i></Link>
+                                <Link to="https://westeracademy.uz/" target="_blank"><i className="bi bi-plus-lg"></i></Link>
                             </li>
                             <li>
                                 <h3>Kurslar dasturi bozor talabiga javob beradi</h3>
