@@ -29,7 +29,7 @@ export default function Quiz() {
                 })
                 .then(data => setQuizData(data))
                 .catch(error => console.error(error.message))
-                setLoader(false)
+            setLoader(false)
         }
         getCounteries()
     }, [url])
@@ -55,18 +55,18 @@ export default function Quiz() {
 
     const postHandler = () => {
 
-        fetch(`${url}/e8270ebb4d78d5528192fc8ef01228f3e2301bfd946d3703f95d7fad86f1172d`, {
+        fetch(`${url}/e8270ebb4d78d5528fc8ef01228f3e2301bfd946d3703f95d7fad86f1172d192`, {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json', 
+                'Content-type': 'application/json',
                 'Accept': 'application/json',
-                'Access-Control-Allow-Origin': '*' 
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
                 quiz_id: quizData[number].id,
                 answer_id: anws,
             })
-        })
+        })    
     }
 
 
@@ -96,17 +96,17 @@ export default function Quiz() {
     return (
         <div className="quiz">
             <div className="container">
-            <div className={modal ? "q-close activeModal" : "q-close"} onClick={() => { setModal(false) }}></div>
-            <div className={modal ? "q activeModal" : "q"}>
-                <div className="q__form">
-                    <div className="q__form__top">
-                        <h3>Bu songi savol ! Natijangizni bilish uchun natija tugmasini bosing</h3>
-                        <p onClick={() => { setModal(false) }}>
-                            <img src={xImg} alt="" />
-                        </p>
+                <div className={modal ? "q-close activeModal" : "q-close"} onClick={() => { setModal(false) }}></div>
+                <div className={modal ? "q activeModal" : "q"}>
+                    <div className="q__form">
+                        <div className="q__form__top">
+                            <h3>Bu songi savol ! Natijangizni bilish uchun natija tugmasini bosing</h3>
+                            <p onClick={() => { setModal(false) }}>
+                                <img src={xImg} alt="" />
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
                 <Test questions={quizData[number]} heandlerAnswer={heandlerAnswer} number={number} testCount={quizData.length} loader={loader} />
 
@@ -117,7 +117,7 @@ export default function Quiz() {
                     {
                         seconds === 0 ? (
                             <Link to="/result">
-                                <button onClick={()=>{setResult(true)}} className='container__pagination__btn2'>Natija</button>
+                                <button onClick={() => { setResult(true) }} className='container__pagination__btn2'>Natija</button>
                             </Link>
                         ) : (
                             anws === 0 ? (
@@ -136,7 +136,7 @@ export default function Quiz() {
 
                                 ) : (
                                     <Link to="/result">
-                                        <button onClick={()=>{setResult(true)}} className='container__pagination__btn2'>Natija</button>
+                                        <button onClick={() => { setResult(true) }} className='container__pagination__btn2'>Natija</button>
                                     </Link>
                                 )
                             ))
