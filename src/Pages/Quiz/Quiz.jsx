@@ -100,7 +100,7 @@ export default function Quiz() {
                 <div className={modal ? "q activeModal" : "q"}>
                     <div className="q__form">
                         <div className="q__form__top">
-                            <h3>Bu songi savol ! Natijangizni bilish uchun natija tugmasini bosing</h3>
+                            <h3>Bu so'ngi savol ! Natijangizni bilish uchun natija tugmasini bosing</h3>
                             <p onClick={() => { setModal(false) }}>
                                 <img src={xImg} alt="" />
                             </p>
