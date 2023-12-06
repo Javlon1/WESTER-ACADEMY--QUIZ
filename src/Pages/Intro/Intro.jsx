@@ -30,7 +30,7 @@ export default function Intro() {
 
         const ageValue = parseInt(formData.age, 10);
         if (isNaN(ageValue) || ageValue < 8 || ageValue > 28) {
-            newErrors.age = 'Yoshingizni to‘g‘ri kiriting yoki yoshingiz to‘g‘ri kelmaydi';
+            newErrors.age = 'Yoshingizni to‘g‘ri kiriting yoki yoshingiz to‘g‘ri kelmaydi 8-28';
             isValid = false;
         }
 
